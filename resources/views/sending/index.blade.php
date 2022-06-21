@@ -38,7 +38,8 @@
                                     <div class="form-group">
                                         <div class="input-group mb-3">
                                             <input type="text" class="form-control" name="search">
-                                            <button class="btn btn-success" type="submit" id="button-addon2">Search</button>
+                                            <button class="btn btn-success" type="submit"
+                                                id="button-addon2">Search</button>
                                         </div>
                                     </div>
                                 </div>
@@ -54,7 +55,6 @@
                         <thead>
                             <tr>
                                 <th style="width: 1%;">#</th>
-                                <th style="width: 2%; text-align: center;">Name</th>
                                 <th style="width: 5%; text-align: center;">Oversea Company</th>
                                 <th style="width: 3%; text-align: center;">Male</th>
                                 <th style="width: 3%; text-align: center;">Female</th>
@@ -70,9 +70,6 @@
                                         {{ $key + 1 }}
                                     </td>
 
-                                    <td>
-                                        {{ $sending->demands_table->company_name ?? '' }}
-                                    </td>
 
                                     <td>
                                         {{ $sending->demands_table->overseas_agencies_table->company_name ?? '' }}
@@ -120,7 +117,7 @@
                             @endforeach
                         </tbody>
                         <tr>
-                            <th colspan="3">Total</th>
+                            <th colspan="2">Total</th>
                             <th style="text-align: right; font-weight: bold">
                                 {{ $sendings->sum('sending_male') }}
                             </th>

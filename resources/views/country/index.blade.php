@@ -30,8 +30,10 @@
                                 <div class="form-group">
                                     <div class="form-group">
                                         <div class="input-group mb-3">
-                                            <input type="text" class="form-control" placeholder="Search..." name="search">
-                                            <button class="btn btn-success" type="submit" id="button-addon2">Search</button>
+                                            <input type="text" class="form-control" placeholder="Search..."
+                                                name="search">
+                                            <button class="btn btn-success" type="submit"
+                                                id="button-addon2">Search</button>
                                         </div>
                                     </div>
                                 </div>
@@ -71,7 +73,8 @@
                                                 <a class="dropdown-item"
                                                     href="{{ route('country.edit', $country->id) }}">Edit</a>
 
-                                                <form action="{{ route('country.destroy', $country->id) }}" method="POST">
+                                                <form action="{{ route('country.destroy', $country->id) }}"
+                                                    method="POST">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="button" class="dropdown-item del_confirm"
@@ -88,7 +91,6 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
 @endsection
 

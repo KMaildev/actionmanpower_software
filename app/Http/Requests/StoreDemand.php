@@ -25,7 +25,6 @@ class StoreDemand extends FormRequest
     {
         return [
             'demand_status' => 'required',
-            'company_name' => 'required',
             'countrie_id' => 'required',
             'overseas_agencie_id' => 'required',
             'male' => 'numeric',

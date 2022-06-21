@@ -11,6 +11,9 @@ Auth::routes(['register' => false]);
 Route::middleware('auth')->group(function () {
     Route::get('/home', 'PassportController@index')->name('home');
 
+    Route::resource('department', 'DepartmentController');
+    Route::resource('employee', 'EmployeeController');
+
     Route::resource('passport', 'PassportController');
     Route::post('passport_import', 'PassportController@passport_import')->name('passport_import');
     Route::get('passport_export', 'PassportController@passport_export')->name('passport_export');

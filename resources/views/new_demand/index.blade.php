@@ -2,13 +2,13 @@
 @section('content')
     <div class="row page-titles">
         <div class="col-md-5 align-self-center">
-            <h4 class="text-themecolor">New Demand</h4>
+            <h4 class="text-themecolor"> Demand</h4>
         </div>
         <div class="col-md-7 align-self-center text-end">
             <div class="d-flex justify-content-end align-items-center">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <a href="{{ route('new_demand.index') }}">New Demand</a>
+                        <a href="{{ route('new_demand.index') }}"> Demand</a>
                     </li>
                     <li class="breadcrumb-item active">Table</li>
                 </ol>
@@ -77,10 +77,6 @@
                             <tr>
                                 <td rowspan="2" style="width: 1%;">
                                     #
-                                </td>
-
-                                <td rowspan="2" style="width: 5%; text-align: center;">
-                                    Name
                                 </td>
 
                                 <td rowspan="2" style="width: 10%; text-align: center;">
@@ -188,9 +184,6 @@
                                 @if ($demand->demand_status == 'new_demand')
                                     <tr>
                                         <td>{{ $key + 1 }}</td>
-                                        <td>
-                                            {{ $demand->company_name }}
-                                        </td>
 
                                         <td>
                                             {{ $demand->overseas_agencies_table->company_name ?? '' }}
@@ -378,7 +371,7 @@
                             @endforeach
                         </tbody>
                         <tr>
-                            <th colspan="4">Total</th>
+                            <th colspan="3">Total</th>
                             <th style="background-color: #c01faa; color: white; text-align: right; font-weight: bold">
                                 @php
                                     $demandMaleTotal = array_sum($demandMaleTotal);

@@ -60,7 +60,7 @@ class NewDemandController extends Controller
     public function store(StoreDemand $request)
     {
         $demand = new Demand();
-        $demand->company_name = $request->company_name;
+        $demand->company_name = NULL;
         $demand->countrie_id = $request->countrie_id;
         $demand->overseas_agencie_id = $request->overseas_agencie_id;
         $demand->male = $request->male ?? 0;
@@ -109,7 +109,7 @@ class NewDemandController extends Controller
     public function update(UpdateDemand $request, $id)
     {
         $demand = Demand::findOrFail($id);
-        $demand->company_name = $request->company_name;
+        $demand->company_name = NULL;
         $demand->countrie_id = $request->countrie_id;
         $demand->overseas_agencie_id = $request->overseas_agencie_id;
         $demand->male = $request->male ?? 0;

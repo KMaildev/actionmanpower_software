@@ -22,20 +22,6 @@
                                                 <h3 class="card-title">Demand Info</h3>
                                                 <hr>
                                                 <div class="row p-t-20">
-
-                                                    <div class="col-md-12">
-                                                        <div class="form-group @error('company_name') has-danger @enderror">
-                                                            <label class="form-label">Company Name</label>
-                                                            <select class="form-control form-select" name="company_name">
-                                                                <option value="Office 1">Office 1</option>
-                                                            </select>
-                                                            @error('company_name')
-                                                                <div class="form-control-feedback" style="color: red;">
-                                                                    {{ $message }} </div>
-                                                            @enderror
-                                                        </div>
-                                                    </div>
-
                                                     <div class="col-md-4">
                                                         <div class="form-group @error('countrie_id') has-danger @enderror">
                                                             <label class="form-label">Country</label>
@@ -92,8 +78,8 @@
                                                             <label class="form-label">Male</label>
                                                             <input type="text"
                                                                 class="form-control @error('male') form-control-danger @enderror"
-                                                                name="male" oninput="MaleFemaleTotalCalc()" id="male"
-                                                                value="0">
+                                                                name="male" oninput="MaleFemaleTotalCalc()"
+                                                                id="male" value="0">
                                                             @error('male')
                                                                 <div class="form-control-feedback" style="color: red;">
                                                                     {{ $message }} </div>
@@ -106,8 +92,8 @@
                                                             <label class="form-label">Female</label>
                                                             <input type="text"
                                                                 class="form-control @error('female') form-control-danger @enderror"
-                                                                name="female" oninput="MaleFemaleTotalCalc()" id="female"
-                                                                value="0">
+                                                                name="female" oninput="MaleFemaleTotalCalc()"
+                                                                id="female" value="0">
                                                             @error('female')
                                                                 <div class="form-control-feedback" style="color: red;">
                                                                     {{ $message }} </div>

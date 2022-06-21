@@ -5,8 +5,7 @@
 
                 <li class="user-pro">
                     <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><img
-                            src="{{ asset('design/assets/images/users/1.jpg') }}" alt="user-img"
-                            class="img-circle">
+                            src="{{ asset('design/assets/images/users/1.jpg') }}" alt="user-img" class="img-circle">
                         <span class="hide-menu">
                             MSY
                         </span>
@@ -14,14 +13,14 @@
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="javascript:void(0)"><i class="ti-user"></i> My Profile</a></li>
                         <li>
-                            <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                            <a href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">
                                 <i class="fa fa-power-off"></i>
                                 {{ __('Logout') }}
                             </a>
 
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                class="d-none">
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
                             </form>
                         </li>
@@ -50,12 +49,12 @@
 
                 <li>
                     <a class="waves-effect waves-dark" href="{{ route('new_demand.index') }}" aria-expanded="false">
-                        <span class="hide-menu">New Demand</span>
+                        <span class="hide-menu">Demand</span>
                     </a>
                 </li>
 
 
-                <li>
+                <li hidden>
                     <a class="waves-effect waves-dark" href="{{ route('old_demand.index') }}" aria-expanded="false">
                         <span class="hide-menu">Old Demand</span>
                     </a>
@@ -77,13 +76,6 @@
 
 
                 <li>
-                    <a class="waves-effect waves-dark" href="{{ route('file_manager.index') }}"
-                        aria-expanded="false">
-                        <span class="hide-menu">File Manager</span>
-                    </a>
-                </li>
-
-                <li>
                     <a class="waves-effect waves-dark" href="{{ route('overseas_agent.index') }}"
                         aria-expanded="false">
                         <span class="hide-menu">Overseas Agent</span>
@@ -91,8 +83,27 @@
                 </li>
 
                 <li>
+                    <a class="waves-effect waves-dark" href="{{ route('file_manager.index') }}"
+                        aria-expanded="false">
+                        <span class="hide-menu">File Manager</span>
+                    </a>
+                </li>
+
+                <li>
                     <a class="waves-effect waves-dark" href="{{ route('country.index') }}" aria-expanded="false">
                         <span class="hide-menu">Country</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a class="waves-effect waves-dark" href="{{ route('department.index') }}" aria-expanded="false">
+                        <span class="hide-menu">Department</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a class="waves-effect waves-dark" href="{{ route('employee.index') }}" aria-expanded="false">
+                        <span class="hide-menu">Employees</span>
                     </a>
                 </li>
 

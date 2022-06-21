@@ -90,8 +90,8 @@
                                                             <label class="form-label">Male</label>
                                                             <input type="text"
                                                                 class="form-control @error('male') form-control-danger @enderror"
-                                                                name="male" oninput="MaleFemaleTotalCalc()" id="male"
-                                                                value="0">
+                                                                name="male" oninput="MaleFemaleTotalCalc()"
+                                                                id="male" value="0">
                                                             @error('male')
                                                                 <div class="form-control-feedback" style="color: red;">
                                                                     {{ $message }} </div>
@@ -104,8 +104,8 @@
                                                             <label class="form-label">Female</label>
                                                             <input type="text"
                                                                 class="form-control @error('female') form-control-danger @enderror"
-                                                                name="female" oninput="MaleFemaleTotalCalc()" id="female"
-                                                                value="0">
+                                                                name="female" oninput="MaleFemaleTotalCalc()"
+                                                                id="female" value="0">
                                                             @error('female')
                                                                 <div class="form-control-feedback" style="color: red;">
                                                                     {{ $message }} </div>

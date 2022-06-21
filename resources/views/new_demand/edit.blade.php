@@ -24,22 +24,6 @@
                                                 <hr>
                                                 <div class="row p-t-20">
 
-                                                    <div class="col-md-12">
-                                                        <div class="form-group @error('company_name') has-danger @enderror">
-                                                            <label class="form-label">Company Name</label>
-                                                            <select class="form-control form-select" name="company_name">
-                                                                <option value="Office 1"
-                                                                    @if ($demand->company_name == 'Office 1') checked @endif>
-                                                                    Office 1
-                                                                </option>
-                                                            </select>
-                                                            @error('company_name')
-                                                                <div class="form-control-feedback" style="color: red;">
-                                                                    {{ $message }} </div>
-                                                            @enderror
-                                                        </div>
-                                                    </div>
-
                                                     <div class="col-md-4">
                                                         <div class="form-group @error('countrie_id') has-danger @enderror">
                                                             <label class="form-label">Country</label>
@@ -103,8 +87,8 @@
                                                             <label class="form-label">Male</label>
                                                             <input type="text"
                                                                 class="form-control @error('male') form-control-danger @enderror"
-                                                                name="male" oninput="MaleFemaleTotalCalc()" id="male"
-                                                                value="{{ $demand->male }}">
+                                                                name="male" oninput="MaleFemaleTotalCalc()"
+                                                                id="male" value="{{ $demand->male }}">
                                                             @error('male')
                                                                 <div class="form-control-feedback" style="color: red;">
                                                                     {{ $message }} </div>
@@ -117,8 +101,8 @@
                                                             <label class="form-label">Female</label>
                                                             <input type="text"
                                                                 class="form-control @error('female') form-control-danger @enderror"
-                                                                name="female" oninput="MaleFemaleTotalCalc()" id="female"
-                                                                value="{{ $demand->female }}">
+                                                                name="female" oninput="MaleFemaleTotalCalc()"
+                                                                id="female" value="{{ $demand->female }}">
                                                             @error('female')
                                                                 <div class="form-control-feedback" style="color: red;">
                                                                     {{ $message }} </div>
@@ -126,13 +110,13 @@
                                                         </div>
                                                     </div>
 
-
                                                     <div class="col-md-4">
                                                         <div class="form-group @error('total') has-danger @enderror">
                                                             <label class="form-label">Total</label>
                                                             <input type="text"
                                                                 class="form-control @error('total') form-control-danger @enderror"
-                                                                id="total">
+                                                                id="total"
+                                                                value="{{ $demand->male + $demand->female }}">
                                                             @error('total')
                                                                 <div class="form-control-feedback" style="color: red;">
                                                                     {{ $message }} </div>
