@@ -1,10 +1,10 @@
 @extends('layouts.main')
 @section('content')
-    <div class="row">
+    <div class="row py-5">
         <div class="col-lg-12">
 
-            <div class="row">
-                <div class="col-md-12 col-lg-12 col-sm-12">
+            <div class="row justify-content-center">
+                <div class="col-md-9 col-lg-9 col-sm-12">
                     <div class="card">
                         <div class="card-body">
                             <div class="tab-content tabcontent-border">
@@ -24,7 +24,7 @@
                                                 <hr>
                                                 <div class="row p-t-20">
 
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-6">
                                                         <div class="form-group @error('countrie_id') has-danger @enderror">
                                                             <label class="form-label">Country</label>
                                                             <select class="select2 form-control form-select"
@@ -44,7 +44,7 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-6">
                                                         <div
                                                             class="form-group @error('overseas_agencie_id') has-danger @enderror">
                                                             <label class="form-label">
@@ -64,19 +64,6 @@
                                                                 <div class="form-control-feedback">
                                                                     {{ $message }}
                                                                 </div>
-                                                            @enderror
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-4">
-                                                        <div class="form-group @error('contact') has-danger @enderror">
-                                                            <label class="form-label">Contact(Agent Name)</label>
-                                                            <input type="text"
-                                                                class="form-control @error('contact') form-control-danger @enderror"
-                                                                name="contact" id="contact">
-                                                            @error('contact')
-                                                                <div class="form-control-feedback" style="color: red;">
-                                                                    {{ $message }} </div>
                                                             @enderror
                                                         </div>
                                                     </div>
@@ -124,7 +111,7 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-6">
                                                         <div class="form-group @error('demand_date') has-danger @enderror">
                                                             <label class="form-label">Demand Date</label>
                                                             <input type="text"
@@ -138,7 +125,7 @@
                                                     </div>
 
 
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-6">
                                                         <div
                                                             class="form-group @error('cabinet_date') has-danger @enderror">
                                                             <label class="form-label">Cabinet Date</label>
@@ -153,38 +140,62 @@
                                                     </div>
 
 
-                                                    <div class="row">
-                                                        <div class="col-md-4">
-                                                            <div
-                                                                class="form-group @error('issue_date') has-danger @enderror">
-                                                                <label class="form-label">Issue Date</label>
-                                                                <input type="text"
-                                                                    class="form-control @error('issue_date') form-control-danger @enderror"
-                                                                    name="issue_date" value="{{ $demand->issue_date }}">
-                                                                @error('issue_date')
-                                                                    <div class="form-control-feedback" style="color: red;">
-                                                                        {{ $message }} </div>
-                                                                @enderror
-                                                            </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group @error('issue_date') has-danger @enderror">
+                                                            <label class="form-label">Issue Date</label>
+                                                            <input type="text"
+                                                                class="form-control @error('issue_date') form-control-danger @enderror"
+                                                                name="issue_date" value="{{ $demand->issue_date }}">
+                                                            @error('issue_date')
+                                                                <div class="form-control-feedback" style="color: red;">
+                                                                    {{ $message }} </div>
+                                                            @enderror
                                                         </div>
-
-
-                                                        <div class="col-md-4">
-                                                            <div
-                                                                class="form-group @error('issue_number') has-danger @enderror">
-                                                                <label class="form-label">Issue Number</label>
-                                                                <input type="text"
-                                                                    class="form-control @error('issue_number') form-control-danger @enderror"
-                                                                    name="issue_number"
-                                                                    value="{{ $demand->issue_number }}">
-                                                                @error('issue_number')
-                                                                    <div class="form-control-feedback" style="color: red;">
-                                                                        {{ $message }} </div>
-                                                                @enderror
-                                                            </div>
-                                                        </div>
-
                                                     </div>
+
+
+                                                    <div class="col-md-6">
+                                                        <div
+                                                            class="form-group @error('issue_number') has-danger @enderror">
+                                                            <label class="form-label">Issue Number</label>
+                                                            <input type="text"
+                                                                class="form-control @error('issue_number') form-control-danger @enderror"
+                                                                name="issue_number" value="{{ $demand->issue_number }}">
+                                                            @error('issue_number')
+                                                                <div class="form-control-feedback" style="color: red;">
+                                                                    {{ $message }} </div>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group @error('coe_date') has-danger @enderror">
+                                                            <label class="form-label">COE Date</label>
+                                                            <input type="text"
+                                                                class="form-control @error('coe_date') form-control-danger @enderror"
+                                                                name="coe_date" value="{{ $demand->coe_date }}">
+                                                            @error('coe_date')
+                                                                <div class="form-control-feedback" style="color: red;">
+                                                                    {{ $message }} </div>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group @error('coe_number') has-danger @enderror">
+                                                            <label class="form-label">COE Number</label>
+                                                            <input type="text"
+                                                                class="form-control @error('coe_number') form-control-danger @enderror"
+                                                                name="coe_number" value="{{ $demand->coe_number }}">
+                                                            @error('coe_number')
+                                                                <div class="form-control-feedback" style="color: red;">
+                                                                    {{ $message }} </div>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+
 
                                                 </div>
                                             </div>

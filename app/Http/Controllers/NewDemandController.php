@@ -70,6 +70,9 @@ class NewDemandController extends Controller
         $demand->demand_status = $request->demand_status;
         $demand->issue_date = $request->issue_date;
         $demand->issue_number = $request->issue_number;
+
+        $demand->coe_date = $request->coe_date;
+        $demand->coe_number = $request->coe_number;
         $demand->save();
         return redirect()->back()->with('success', 'Process is completed.');
     }
@@ -119,6 +122,9 @@ class NewDemandController extends Controller
         $demand->demand_status = $request->demand_status;
         $demand->issue_date = $request->issue_date;
         $demand->issue_number = $request->issue_number;
+
+        $demand->coe_date = $request->coe_date;
+        $demand->coe_number = $request->coe_number;
         $demand->update();
         return redirect()->back()->with('success', 'Process is completed.');
     }
