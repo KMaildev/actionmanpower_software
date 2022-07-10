@@ -15,6 +15,19 @@
                     </a>
                     <br><br>
                     <table class="table">
+
+                        <tr>
+                            <th style="width: 50%">
+                                Photo
+                            </th>
+                            <td>
+                                @if ($passport->photo)
+                                    <img src="{{ Storage::url($passport->photo) }}" alt=""
+                                        style="width: 20%; height: 20%; background-position: center; background-size: contain, cover;">
+                                @endif
+                            </td>
+                        <tr>
+
                         <tr>
                             <th style="width: 50%">Name</th>
                             <td>
@@ -153,6 +166,15 @@
                             <th style="width: 50%">Sending Date</th>
                             <td>
                                 {{ $passport->labour_management_table->sendings_table->sending_date ?? '' }}
+                            </td>
+                        <tr>
+
+                        <tr>
+                            <th style="width: 50%">
+                                Covid Vaccination Dose
+                            </th>
+                            <td>
+                                {{ $passport->covid_status ?? '' }}
                             </td>
                         <tr>
                     </table>

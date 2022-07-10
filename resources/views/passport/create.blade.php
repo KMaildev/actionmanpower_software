@@ -44,7 +44,7 @@
 
                                             <div class="card-body">
                                                 <form autocomplete="off" action="{{ route('passport.store') }}"
-                                                    method="POST" id="create-form">
+                                                    method="POST" id="create-form" enctype="multipart/form-data">
                                                     @csrf
                                                     <div class="form-body">
                                                         <h3 class="card-title">Person Info</h3>
@@ -197,6 +197,43 @@
                                                                         <label class="form-check-label"
                                                                             for="female">Female</label>
                                                                     </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-12">
+                                                                <div class="form-group">
+                                                                    <label class="form-label">
+                                                                        Covid Vaccination Dose
+                                                                    </label>
+                                                                    <div class="custom-control custom-radio">
+                                                                        <input type="radio" id="CovidYes"
+                                                                            value="Yes" name="covid_status"
+                                                                            class="form-check-input" checked>
+                                                                        <label class="form-check-label"
+                                                                            for="CovidYes">Yes</label>
+                                                                    </div>
+                                                                    <div class="custom-control custom-radio">
+                                                                        <input type="radio" id="CovidNo"
+                                                                            value="No" name="covid_status"
+                                                                            class="form-check-input">
+                                                                        <label class="form-check-label"
+                                                                            for="CovidNo">No</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-12">
+                                                                <div class="form-group">
+                                                                    <label class="form-label">
+                                                                        Photo
+                                                                    </label>
+                                                                    <input type="file" class="form-control"
+                                                                        name="photo">
+                                                                    @error('photo')
+                                                                        <div class="form-control-feedback">
+                                                                            {{ $message }}
+                                                                        </div>
+                                                                    @enderror
                                                                 </div>
                                                             </div>
 

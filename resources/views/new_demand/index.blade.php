@@ -105,13 +105,13 @@
 
                             <tr>
                                 {{-- Demand Information --}}
-                                <td style="color: white; background-color: #c01faa; text-align: center; widht: 10%">
+                                <td style="color: black; text-align: center; widht: 10%">
                                     Date
                                 </td>
-                                <td style="color: white; background-color: #c01faa; text-align: center; widht: 10%">
+                                <td style="color: black; text-align: center; widht: 10%">
                                     Male
                                 </td>
-                                <td style="color: white; background-color: #c01faa; text-align: center; widht: 10%">
+                                <td style="color: black; text-align: center; widht: 10%">
                                     Female
                                 </td>
                                 <td style="color: white; background-color: #c01faa; text-align: center; widht: 10%">
@@ -119,22 +119,22 @@
                                 </td>
 
                                 {{-- Contract Information --}}
-                                <td style="color: white; background-color: #1339b3; text-align: center; widht: 10%">
+                                <td style="color: black; text-align: center; widht: 10%">
                                     Date
                                 </td>
-                                <td style="color: white; background-color: #1339b3; text-align: center; widht: 10%">
+                                <td style="color: black; text-align: center; widht: 10%">
                                     Male
                                 </td>
-                                <td style="color: white; background-color: #1339b3; text-align: center; widht: 10%">
+                                <td style="color: black; text-align: center; widht: 10%">
                                     Female
                                 </td>
                                 <td style="color: white; background-color: #1339b3; text-align: center; widht: 10%">
                                     Total
                                 </td>
-                                <th style="color: white; background-color: #1339b3; text-align: center; widht: 10%">
+                                <th style="color: black; text-align: center; widht: 10%">
                                     Balance Male
                                 </th>
-                                <th style="color: white; background-color: #1339b3; text-align: center; widht: 10%">
+                                <th style="color: black; text-align: center; widht: 10%">
                                     Balance Female
                                 </th>
                                 <th style="color: white; background-color: #1339b3; text-align: center; widht: 10%">
@@ -142,22 +142,22 @@
                                 </th>
 
                                 {{-- Sending Information --}}
-                                <td style="color: white; background-color: #07834f; text-align: center; widht: 10%">
+                                <td style="color: black; text-align: center; widht: 10%">
                                     Date
                                 </td>
-                                <td style="color: white; background-color: #07834f; text-align: center; widht: 10%">
+                                <td style="color: black; text-align: center; widht: 10%">
                                     Male
                                 </td>
-                                <td style="color: white; background-color: #07834f; text-align: center; widht: 10%">
+                                <td style="color: black; text-align: center; widht: 10%">
                                     Female
                                 </td>
                                 <td style="color: white; background-color: #07834f; text-align: center; widht: 10%">
                                     Total
                                 </td>
-                                <th style="color: white; background-color: #07834f; text-align: center; widht: 10%">
+                                <th style="color: black; text-align: center; widht: 10%">
                                     Balance Male
                                 </th>
-                                <th style="color: white; background-color: #07834f; text-align: center; widht: 10%">
+                                <th style="color: black; text-align: center; widht: 10%">
                                     Balance Female
                                 </th>
                                 <th style="color: white; background-color: #07834f; text-align: center; widht: 10%">
@@ -190,20 +190,17 @@
                                         </td>
 
                                         {{-- Demand --}}
-                                        <td
-                                            style="text-align: right; font-weight: bold; background-color: #c01faa; color: white;">
+                                        <td style="text-align: right; font-weight: bold; color: black;">
                                             {{ $demand->demand_date }}
                                         </td>
-                                        <td
-                                            style="text-align: right; font-weight: bold; background-color: #c01faa; color: white;">
+                                        <td style="text-align: right; font-weight: bold; color: black; font-weight: bold;">
                                             {{ $demand->male }}
                                             @php
                                                 $demandMaleTotal[] = $demand->male ?? 0;
                                             @endphp
                                         </td>
 
-                                        <td
-                                            style="text-align: right; font-weight: bold; background-color: #c01faa; color: white;">
+                                        <td style="text-align: right; font-weight: bold; color: black; font-weight: bold;">
                                             {{ $demand->female }}
                                             @php
                                                 $demandFemaleTotal[] = $demand->female ?? 0;
@@ -217,18 +214,18 @@
                                         {{-- Demand --}}
 
                                         {{-- Contract --}}
-                                        <td style="color: white; background-color: #1339b3;">
+                                        <td style="color: black; font-weight: bold;">
                                             {{ $demand->contracts_table->contract_date ?? '' }}
                                         </td>
 
-                                        <td style="color: white; background-color: #1339b3; text-align: right;">
+                                        <td style="color: black; text-align: right; font-weight: bold;">
                                             {{ $demand->contracts_table->contract_male ?? 0 }}
                                             @php
                                                 $contractMaleTotal[] = $demand->contracts_table->contract_male ?? 0;
                                             @endphp
                                         </td>
 
-                                        <td style="color: white; background-color: #1339b3; text-align: right;">
+                                        <td style="color: black; text-align: right; font-weight: bold;">
                                             {{ $demand->contracts_table->contract_female ?? 0 }}
                                             @php
                                                 $contractFemaleTotal[] = $demand->contracts_table->contract_female ?? 0;
@@ -236,7 +233,8 @@
                                         </td>
 
                                         <!--Contract Total-->
-                                        <td style="color: white; background-color: #1339b3; text-align: right;">
+                                        <td
+                                            style="color: white; background-color: #1339b3; text-align: right; font-weight: bold;">
                                             @php
                                                 $contract_male = $demand->contracts_table->contract_male ?? 0;
                                                 $contract_female = $demand->contracts_table->contract_female ?? 0;
@@ -245,7 +243,7 @@
                                         </td>
 
                                         <!--Balance Male-->
-                                        <td style="color: white; background-color: #1339b3; text-align: right;">
+                                        <td style="color: black; text-align: right; font-weight: bold;">
                                             @php
                                                 $demand_male = $demand->male ?? 0;
                                                 $contract_male = $demand->contracts_table->contract_male ?? 0;
@@ -256,7 +254,7 @@
                                         </td>
 
                                         <!--Balance MFemale-->
-                                        <td style="color: white; background-color: #1339b3; text-align: right;">
+                                        <td style="color: black; text-align: right; font-weight: bold;">
                                             @php
                                                 $demand_female = $demand->female ?? 0;
                                                 $contract_female = $demand->contracts_table->contract_female ?? 0;
@@ -267,7 +265,8 @@
                                         </td>
 
                                         <!--Balance Total-->
-                                        <td style="color: white; background-color: #1339b3; text-align: right;">
+                                        <td
+                                            style="color: white; background-color: #1339b3; text-align: right; font-weight: bold;">
                                             @php
                                                 $demand_male = $demand->male ?? 0;
                                                 $demand_female = $demand->female ?? 0;
@@ -283,25 +282,26 @@
                                         {{-- Contract --}}
 
                                         <!--Sending-->
-                                        <td style="background-color: #07834f; color: white">
+                                        <td style="color: black; font-weight: bold;">
                                             {{ $demand->sendings_table->sending_date ?? '' }}
                                         </td>
 
-                                        <td style="background-color: #07834f; color: white; text-align: right;">
+                                        <td style="color: black; text-align: right; font-weight: bold;">
                                             {{ $demand->sendings_table->sending_male ?? 0 }}
                                             @php
                                                 $sendingMaleTotal[] = $demand->sendings_table->sending_male ?? 0;
                                             @endphp
                                         </td>
 
-                                        <td style="background-color: #07834f; color: white; text-align: right;">
+                                        <td style="color: black; text-align: right; font-weight: bold;">
                                             {{ $demand->sendings_table->sending_female ?? 0 }}
                                             @php
                                                 $sendingFemaleTotal[] = $demand->sendings_table->sending_female ?? 0;
                                             @endphp
                                         </td>
 
-                                        <td style="background-color: #07834f; color: white; text-align: right;">
+                                        <td
+                                            style="background-color: #07834f; color: white; text-align: right; font-weight: bold;">
                                             @php
                                                 $sending_male = $demand->sendings_table->sending_male ?? 0;
                                                 $sending_female = $demand->sendings_table->sending_female ?? 0;
@@ -311,7 +311,7 @@
                                             @endphp
                                         </td>
 
-                                        <td style="background-color: #07834f; color: white; text-align: right;">
+                                        <td style="color: black; text-align: right; font-weight: bold;">
                                             @php
                                                 $contract_male = $demand->contracts_table->contract_male ?? 0;
                                                 $sending_male = $demand->sendings_table->sending_male ?? 0;
@@ -321,7 +321,7 @@
                                             @endphp
                                         </td>
 
-                                        <td style="background-color: #07834f; color: white; text-align: right;">
+                                        <td style="color: black; text-align: right; font-weight: bold;">
                                             @php
                                                 $contract_female = $demand->contracts_table->contract_female ?? 0;
                                                 $sending_female = $demand->sendings_table->sending_female ?? 0;
@@ -331,7 +331,8 @@
                                             @endphp
                                         </td>
 
-                                        <td style="background-color: #07834f; color: white; text-align: right;">
+                                        <td
+                                            style="background-color: #07834f; color: white; text-align: right; font-weight: bold;">
                                             @php
                                                 $sending_balance_total = $sending_balance_male + $sending_balance_female;
                                                 echo $sending_balance_total;
@@ -371,14 +372,14 @@
                             @endforeach
                         </tbody>
                         <tr>
-                            <th colspan="3">Total</th>
-                            <th style="background-color: #c01faa; color: white; text-align: right; font-weight: bold">
+                            <th colspan="3" style="background-color: #edf1f5;">Total</th>
+                            <th style="color: black; text-align: right; font-weight: bold; background-color: #edf1f5;">
                                 @php
                                     $demandMaleTotal = array_sum($demandMaleTotal);
                                     echo $demandMaleTotal;
                                 @endphp
                             </th>
-                            <th style="background-color: #c01faa; color: white; text-align: right; font-weight: bold">
+                            <th style="color: black; text-align: right; font-weight: bold; background-color: #edf1f5;">
                                 @php
                                     $demandFemaleTotal = array_sum($demandFemaleTotal);
                                     echo $demandFemaleTotal;
@@ -391,14 +392,14 @@
                             </th>
 
                             {{-- Contract --}}
-                            <th></th>
-                            <th style="background-color: #1339b3; color: white; text-align: right; font-weight: bold">
+                            <th style="background-color: #edf1f5;"></th>
+                            <th style="color: black; text-align: right; font-weight: bold; background-color: #edf1f5;">
                                 @php
                                     $contractMaleTotal = array_sum($contractMaleTotal);
                                     echo $contractMaleTotal;
                                 @endphp
                             </th>
-                            <th style="background-color: #1339b3; color: white; text-align: right; font-weight: bold">
+                            <th style="color: black; text-align: right; font-weight: bold; background-color: #edf1f5;">
                                 @php
                                     $contractFemaleTotal = array_sum($contractFemaleTotal);
                                     echo $contractFemaleTotal;
@@ -411,13 +412,13 @@
                                 @endphp
                             </th>
                             {{-- Balance Male Total --}}
-                            <th style="background-color: #1339b3; color: white; text-align: right; font-weight: bold">
+                            <th style="color: black; text-align: right; font-weight: bold; background-color: #edf1f5;">
                                 @php
                                     $ContractBalanceMale = array_sum($ContractBalanceMale);
                                     echo $ContractBalanceMale;
                                 @endphp
                             </th>
-                            <th style="background-color: #1339b3; color: white; text-align: right; font-weight: bold">
+                            <th style="color: black; text-align: right; font-weight: bold; background-color: #edf1f5;">
                                 @php
                                     $ContractBalanceFemale = array_sum($ContractBalanceFemale);
                                     echo $ContractBalanceFemale;
@@ -432,14 +433,14 @@
                             {{-- Contract --}}
 
                             {{-- Sending --}}
-                            <th></th>
-                            <th style="background-color: #07834f; color: white; text-align: right; font-weight: bold">
+                            <th style="background-color: #edf1f5;"></th>
+                            <th style="color: black; text-align: right; font-weight: bold; background-color: #edf1f5;">
                                 @php
                                     $sendingMaleTotal = array_sum($sendingMaleTotal);
                                     echo $sendingMaleTotal;
                                 @endphp
                             </th>
-                            <th style="background-color: #07834f; color: white; text-align: right; font-weight: bold">
+                            <th style="color: black; text-align: right; font-weight: bold; background-color: #edf1f5;">
                                 @php
                                     $sendingFemaleTotal = array_sum($sendingFemaleTotal);
                                     echo $sendingFemaleTotal;
@@ -451,13 +452,13 @@
                                 @endphp
                             </th>
 
-                            <th style="background-color: #07834f; color: white; text-align: right; font-weight: bold">
+                            <th style="color: black; text-align: right; font-weight: bold; background-color: #edf1f5;">
                                 @php
                                     $sendingBalanceMale = array_sum($sendingBalanceMale);
                                     echo $sendingBalanceMale;
                                 @endphp
                             </th>
-                            <th style="background-color: #07834f; color: white; text-align: right; font-weight: bold">
+                            <th style="color: black; text-align: right; font-weight: bold; background-color: #edf1f5;">
                                 @php
                                     $sendingBalanceFemale = array_sum($sendingBalanceFemale);
                                     echo $sendingBalanceFemale;
@@ -469,7 +470,7 @@
                                     echo $sendingBalanceMale + $sendingBalanceFemale;
                                 @endphp
                             </th>
-
+                            <th style="background-color: #edf1f5;"></th>
                         </tr>
                     </table>
                 </div>

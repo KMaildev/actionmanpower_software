@@ -9,7 +9,7 @@
 
                 <div class="card-body">
                     <form autocomplete="off" action="{{ route('passport.update', $passport->id) }}" method="POST"
-                        id="edit-form">
+                        id="edit-form" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="form-body">
@@ -141,6 +141,44 @@
                                             <input type="radio" id="female" value="female" name="gender"
                                                 class="form-check-input" @if ($passport->gender == 'female') checked @endif>
                                             <label class="form-check-label" for="female">Female</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="form-label">
+                                            Covid Vaccination Dose
+                                        </label>
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="CovidYes" value="Yes" name="covid_status"
+                                                class="form-check-input" @if ($passport->covid_status == 'Yes') checked @endif>
+                                            <label class="form-check-label" for="CovidYes">Yes</label>
+                                        </div>
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="CovidNo" value="No" name="covid_status"
+                                                class="form-check-input" @if ($passport->covid_status == 'No') checked @endif>
+                                            <label class="form-check-label" for="CovidNo">No</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="form-label">
+                                            Photo
+                                        </label>
+                                        <input type="file" class="form-control" name="photo">
+                                        @error('photo')
+                                            <div class="form-control-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                        <div class="preview_img my-2">
+                                            @if ($passport->photo)
+                                                <img src="{{ Storage::url($passport->photo) }}" alt=""
+                                                    style="width: 20%; height: 20%; background-position: center; background-size: contain, cover;">
+                                            @endif
                                         </div>
                                     </div>
                                 </div>

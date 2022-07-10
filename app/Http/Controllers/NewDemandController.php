@@ -73,6 +73,10 @@ class NewDemandController extends Controller
 
         $demand->coe_date = $request->coe_date;
         $demand->coe_number = $request->coe_number;
+
+        $demand->pin_date = $request->pin_date;
+        $demand->pin_number = $request->pin_number;
+
         $demand->save();
         return redirect()->back()->with('success', 'Process is completed.');
     }
@@ -125,6 +129,10 @@ class NewDemandController extends Controller
 
         $demand->coe_date = $request->coe_date;
         $demand->coe_number = $request->coe_number;
+
+        $demand->pin_date = $request->pin_date;
+        $demand->pin_number = $request->pin_number;
+
         $demand->update();
         return redirect()->back()->with('success', 'Process is completed.');
     }

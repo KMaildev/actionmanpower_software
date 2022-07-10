@@ -7,7 +7,7 @@
                     <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><img
                             src="{{ asset('design/assets/images/users/1.jpg') }}" alt="user-img" class="img-circle">
                         <span class="hide-menu">
-                            MSY
+                            Agency
                         </span>
                     </a>
                     <ul aria-expanded="false" class="collapse">
@@ -27,7 +27,7 @@
                     </ul>
                 </li>
 
-                <li hidden>
+                <li>
                     <a class="waves-effect waves-dark" href="{{ route('home') }}" aria-expanded="false">
                         <span class="hide-menu">Dashboard</span>
                     </a>
@@ -105,6 +105,32 @@
                     <a class="waves-effect waves-dark" href="{{ route('employee.index') }}" aria-expanded="false">
                         <span class="hide-menu">Employees</span>
                     </a>
+                </li>
+
+
+
+                <li>
+                    <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                        <span class="hide-menu">Activities Log</span>
+                    </a>
+                    <ul aria-expanded="false" class="collapse">
+                        <li>
+                            <a href="{{ route('activity.index') }}">
+                                Latest Login
+                            </a>
+                        </li>
+
+                        @foreach ($activitieslogs as $activitieslog)
+                            <li>
+                                <a href="{{ route('activity.show', $activitieslog->log_name) }}"
+                                    data-dropdown-toggle="false">
+                                    <span class="site-menu-title">
+                                        {{ Str::upper(str_replace('_', ' ', $activitieslog->log_name)) }}
+                                    </span>
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
                 </li>
 
 

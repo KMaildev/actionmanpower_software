@@ -3,9 +3,16 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Activitylog\Traits\LogsActivity;
 
 class LabourManagement extends Model
 {
+
+    use LogsActivity;
+    protected static $logName = 'labour_management_log';
+    protected static $logAttributes = ['passport_id', 'demand_id', 'contract_id', 'overseas_agencies_id', 'created_at', 'updated_at'];
+
+
     public function passports_table()
     {
         return $this->belongsTo(Passport::class, 'passport_id', 'id');

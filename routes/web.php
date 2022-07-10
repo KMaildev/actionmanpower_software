@@ -9,7 +9,7 @@ Route::get('/', function () {
 
 Auth::routes(['register' => false]);
 Route::middleware('auth')->group(function () {
-    Route::get('/home', 'PassportController@index')->name('home');
+    Route::get('/home', 'DashboardController@index')->name('home');
 
     Route::resource('department', 'DepartmentController');
     Route::resource('employee', 'EmployeeController');
@@ -48,4 +48,5 @@ Route::middleware('auth')->group(function () {
     Route::get('export_contract_labour/{id}', array('as' => 'export_contract_labour', 'uses' => 'LabourManagementController@export_contract_labour'));
 
     Route::view('/file_manager', 'file_manager.index')->name('file_manager.index');
+    Route::resource('activity', 'Activity\ActivityLogController');
 });

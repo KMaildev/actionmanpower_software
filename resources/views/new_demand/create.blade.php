@@ -193,6 +193,34 @@
                                                     </div>
 
 
+                                                    <div class="col-md-6">
+                                                        <div class="form-group @error('pin_date') has-danger @enderror">
+                                                            <label class="form-label">FIN Date</label>
+                                                            <input type="text"
+                                                                class="form-control @error('pin_date') form-control-danger @enderror"
+                                                                name="pin_date">
+                                                            @error('pin_date')
+                                                                <div class="form-control-feedback" style="color: red;">
+                                                                    {{ $message }} </div>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group @error('pin_number') has-danger @enderror">
+                                                            <label class="form-label">FIN Number</label>
+                                                            <input type="text"
+                                                                class="form-control @error('pin_number') form-control-danger @enderror"
+                                                                name="pin_number">
+                                                            @error('pin_number')
+                                                                <div class="form-control-feedback" style="color: red;">
+                                                                    {{ $message }} </div>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+
+
                                                 </div>
                                             </div>
                                             <div class="form-actions">

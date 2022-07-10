@@ -131,6 +131,8 @@
 </script>
 
 <script type="text/javascript" src="{{ url('ajax/demand.js') }}"></script>
+
+
 </body>
 
 </html>

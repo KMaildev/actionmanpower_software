@@ -61,6 +61,12 @@ class PassportController extends Controller
      */
     public function store(StorePassport $request)
     {
+
+        if ($request->hasFile('photo')) {
+            $photo = $request->file('photo');
+            $path = $photo->store('public/photo');
+        }
+
         $Passport = new Passport();
         $Passport->name = $request->name;
         $Passport->father_name = $request->father_name;
@@ -75,6 +81,8 @@ class PassportController extends Controller
         $Passport->gender = $request->gender;
         $Passport->remark = $request->remark;
         $Passport->join_date = date("Y-m-d");
+        $Passport->covid_status = $request->covid_status;
+        $Passport->photo = $path ?? '';
         $Passport->save();
         return redirect()->back()->with('success', 'Created successfully.');
     }
@@ -112,6 +120,11 @@ class PassportController extends Controller
      */
     public function update(UpdatePassport $request, $id)
     {
+        if ($request->hasFile('photo')) {
+            $photo = $request->file('photo');
+            $path = $photo->store('public/photo');
+        }
+
         $Passport = Passport::findOrFail($id);
         $Passport->name = $request->name;
         $Passport->father_name = $request->father_name;
@@ -125,6 +138,8 @@ class PassportController extends Controller
         $Passport->address = $request->address;
         $Passport->gender = $request->gender;
         $Passport->remark = $request->remark;
+        $Passport->covid_status = $request->covid_status;
+        $Passport->photo = $path ?? $Passport->photo;
         $Passport->update();
         return redirect()->back()->with('success', 'Updated successfully.');
     }

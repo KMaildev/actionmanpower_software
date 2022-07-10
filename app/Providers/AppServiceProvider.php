@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Spatie\Activitylog\Models\Activity;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +24,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $activitieslogs = Activity::select('log_name')
+            ->groupBy('log_name')
+            ->get();
+        view()->share('activitieslogs', $activitieslogs);
     }
 }
