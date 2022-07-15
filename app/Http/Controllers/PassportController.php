@@ -68,23 +68,37 @@ class PassportController extends Controller
         }
 
         $Passport = new Passport();
+        $Passport->labour_card_no = $request->labour_card_no;
+        $Passport->issue_labour_date = $request->issue_labour_date;
         $Passport->name = $request->name;
-        $Passport->father_name = $request->father_name;
+        $Passport->photo = $path ?? '';
+        $Passport->gender = $request->gender;
         $Passport->nrc = $request->nrc;
+        $Passport->father_name = $request->father_name;
+        $Passport->qualification = $request->qualification;
         $Passport->date_of_birth = $request->date_of_birth;
+        $Passport->address = $request->address;
+        $Passport->phone = $request->phone;
+        $Passport->job = $request->job;
         $Passport->passport = $request->passport;
         $Passport->passport_date = $request->passport_date;
+        $Passport->identification_card = $request->identification_card;
+        $Passport->issue_date_id_card = $request->issue_date_id_card;
         $Passport->place_of_passport = $request->place_of_passport;
+        $Passport->salary = $request->salary;
+        $Passport->covid_status = $request->covid_status;
+        $Passport->vaccine_name = $request->vaccine_name;
+        $Passport->covid_number = $request->covid_number;
+        $Passport->contact_person = $request->contact_person;
+        $Passport->phone_number = $request->phone_number;
+        $Passport->relative = $request->relative;
         $Passport->local_agent_name = $request->local_agent_name;
-        $Passport->phone = $request->phone;
-        $Passport->address = $request->address;
-        $Passport->gender = $request->gender;
+        $Passport->local_agent_phone = $request->local_agent_phone;
+        $Passport->local_agent_email = $request->local_agent_email;
         $Passport->remark = $request->remark;
         $Passport->join_date = date("Y-m-d");
-        $Passport->covid_status = $request->covid_status;
-        $Passport->photo = $path ?? '';
         $Passport->save();
-        return redirect()->back()->with('success', 'Created successfully.');
+        return redirect()->back()->with('success', 'Your processing has been completed.');
     }
 
     /**
@@ -126,22 +140,36 @@ class PassportController extends Controller
         }
 
         $Passport = Passport::findOrFail($id);
+        $Passport->labour_card_no = $request->labour_card_no;
+        $Passport->issue_labour_date = $request->issue_labour_date;
         $Passport->name = $request->name;
-        $Passport->father_name = $request->father_name;
+        $Passport->photo = $path ?? $Passport->photo;
+        $Passport->gender = $request->gender;
         $Passport->nrc = $request->nrc;
+        $Passport->father_name = $request->father_name;
+        $Passport->qualification = $request->qualification;
         $Passport->date_of_birth = $request->date_of_birth;
+        $Passport->address = $request->address;
+        $Passport->phone = $request->phone;
+        $Passport->job = $request->job;
         $Passport->passport = $request->passport;
         $Passport->passport_date = $request->passport_date;
+        $Passport->identification_card = $request->identification_card;
+        $Passport->issue_date_id_card = $request->issue_date_id_card;
         $Passport->place_of_passport = $request->place_of_passport;
-        $Passport->local_agent_name = $request->local_agent_name;
-        $Passport->phone = $request->phone;
-        $Passport->address = $request->address;
-        $Passport->gender = $request->gender;
-        $Passport->remark = $request->remark;
+        $Passport->salary = $request->salary;
         $Passport->covid_status = $request->covid_status;
-        $Passport->photo = $path ?? $Passport->photo;
+        $Passport->vaccine_name = $request->vaccine_name;
+        $Passport->covid_number = $request->covid_number;
+        $Passport->contact_person = $request->contact_person;
+        $Passport->phone_number = $request->phone_number;
+        $Passport->relative = $request->relative;
+        $Passport->local_agent_name = $request->local_agent_name;
+        $Passport->local_agent_phone = $request->local_agent_phone;
+        $Passport->local_agent_email = $request->local_agent_email;
+        $Passport->remark = $request->remark;
         $Passport->update();
-        return redirect()->back()->with('success', 'Updated successfully.');
+        return redirect()->back()->with('success', 'Your processing has been completed.');
     }
 
     /**

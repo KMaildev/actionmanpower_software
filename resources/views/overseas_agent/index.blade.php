@@ -25,13 +25,14 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-lg-4 col-sm-12 col-md-4">
-                            <span>Search</span>
                             <form action="{{ route('overseas_agent.index') }}" method="GET" autocomplete="off">
                                 <div class="form-group">
                                     <div class="form-group">
                                         <div class="input-group mb-3">
-                                            <input type="text" class="form-control" placeholder="Search..." name="search">
-                                            <button class="btn btn-success" type="submit" id="button-addon2">Search</button>
+                                            <input type="text" class="form-control" placeholder="Search..."
+                                                name="search">
+                                            <button class="btn btn-success" type="submit"
+                                                id="button-addon2">Search</button>
                                         </div>
                                     </div>
                                 </div>
@@ -40,20 +41,19 @@
                     </div>
                 </div>
 
-
                 <div class="table-responsive py-3">
                     <span style="margin: 2px; font-weight: bold;">Total: {{ count($overseas_agencies) }}</span>
-                    <table class="table color-table success-table color-bordered-table muted-bordered-table">
-                        <thead>
+                    <table class="table  muted-bordered-table">
+                        <thead class="table_bg">
                             <tr>
                                 <th style="width: 1%;">#</th>
-                                <th style="width: 5%; text-align: center;">Company Name</th>
-                                <th style="width: 5%; text-align: center;">Contact</th>
-                                <th style="width: 5%; text-align: center;">Type</th>
+                                <th style="width: 5%; text-align: center;">Employer/Company</th>
+                                <th style="width: 5%; text-align: center;">Type of Company</th>
+                                <th style="width: 5%; text-align: center;">Company Phone</th>
+                                <th style="width: 5%; text-align: center;">Company Email</th>
+                                <th style="width: 3%; text-align: center;">Country</th>
+                                <th style="width: 5%; text-align: center;">Contact Person</th>
                                 <th style="width: 5%; text-align: center;">Phone</th>
-                                <th style="width: 5%; text-align: center;">Email</th>
-                                <th style="width: 5%; text-align: center;">Address</th>
-                                <th style="width: 5%; text-align: center;">Country</th>
                                 <th style="width: 1%; text-align: center;">Action</th>
                             </tr>
                         </thead>
@@ -69,10 +69,6 @@
                                     </td>
 
                                     <td>
-                                        {{ $overseas_agency->contact }}
-                                    </td>
-
-                                    <td>
                                         {{ $overseas_agency->type_of_company }}
                                     </td>
 
@@ -85,11 +81,15 @@
                                     </td>
 
                                     <td>
-                                        {{ $overseas_agency->company_address }}
+                                        {{ $overseas_agency->countries_table->country }}
                                     </td>
 
                                     <td>
-                                        {{ $overseas_agency->countries_table->country }}
+                                        {{ $overseas_agency->contact }}
+                                    </td>
+
+                                    <td>
+                                        {{ $overseas_agency->phone ?? '' }}
                                     </td>
 
                                     <td>
@@ -100,7 +100,14 @@
                                             </button>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item"
-                                                    href="{{ route('overseas_agent.edit', $overseas_agency->id) }}">Edit</a>
+                                                    href="{{ route('overseas_agent.edit', $overseas_agency->id) }}">
+                                                    Edit
+                                                </a>
+
+                                                <a class="dropdown-item"
+                                                    href="{{ route('overseas_agent.show', $overseas_agency->id) }}">
+                                                    Details
+                                                </a>
 
                                                 <form
                                                     action="{{ route('overseas_agent.destroy', $overseas_agency->id) }}"
@@ -122,7 +129,7 @@
             </div>
         </div>
     </div>
-    </div>
+    <br><br><br>
 @endsection
 
 @section('script')

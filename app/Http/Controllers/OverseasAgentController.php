@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreOverseaAgency;
 use App\Http\Requests\UpdateOverseaAgency;
 use App\Models\Country;
 use App\Models\OverseasAgency;
@@ -22,6 +23,12 @@ class OverseasAgentController extends Controller
             ->orWhere('company_phone', 'LIKE', "%{$search}%")
             ->orWhere('company_email', 'LIKE', "%{$search}%")
             ->orWhere('company_address', 'LIKE', "%{$search}%")
+            ->orWhere('contact', 'LIKE', "%{$search}%")
+            ->orWhere('company_address', 'LIKE', "%{$search}%")
+            ->orWhere('website', 'LIKE', "%{$search}%")
+            ->orWhere('position', 'LIKE', "%{$search}%")
+            ->orWhere('phone', 'LIKE', "%{$search}%")
+            ->orWhere('remark', 'LIKE', "%{$search}%")
             ->get();
         return view('overseas_agent.index', compact('overseas_agencies'));
     }
@@ -43,8 +50,14 @@ class OverseasAgentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreOverseaAgency $request)
     {
+
+        if ($request->hasFile('logo')) {
+            $logo = $request->file('logo');
+            $logo = $logo->store('public/logo');
+        }
+
         $oversea = new OverseasAgency();
         $oversea->company_name = $request->company_name;
         $oversea->type_of_company = $request->type_of_company;
@@ -52,7 +65,13 @@ class OverseasAgentController extends Controller
         $oversea->company_email = $request->company_email;
         $oversea->company_address = $request->company_address;
         $oversea->countrie_id = $request->countrie_id;
+        $oversea->website = $request->website;
         $oversea->contact = $request->contact;
+        $oversea->position = $request->position;
+        $oversea->phone = $request->phone;
+        $oversea->email = $request->email;
+        $oversea->remark = $request->remark;
+        $oversea->logo = $logo ?? '';
         $oversea->save();
         return redirect()->back()->with('success', 'Process is completed.');
     }
@@ -65,7 +84,9 @@ class OverseasAgentController extends Controller
      */
     public function show($id)
     {
-        //
+        $countryies = Country::all();
+        $overseas_agency = OverseasAgency::findOrFail($id);
+        return view('overseas_agent.show', compact('countryies', 'overseas_agency'));
     }
 
     /**
@@ -90,6 +111,11 @@ class OverseasAgentController extends Controller
      */
     public function update(UpdateOverseaAgency $request, $id)
     {
+        if ($request->hasFile('logo')) {
+            $logo = $request->file('logo');
+            $logo = $logo->store('public/logo');
+        }
+
         $oversea = OverseasAgency::findOrFail($id);
         $oversea->company_name = $request->company_name;
         $oversea->type_of_company = $request->type_of_company;
@@ -97,7 +123,13 @@ class OverseasAgentController extends Controller
         $oversea->company_email = $request->company_email;
         $oversea->company_address = $request->company_address;
         $oversea->countrie_id = $request->countrie_id;
+        $oversea->website = $request->website;
         $oversea->contact = $request->contact;
+        $oversea->position = $request->position;
+        $oversea->phone = $request->phone;
+        $oversea->email = $request->email;
+        $oversea->remark = $request->remark;
+        $oversea->logo = $logo ?? $oversea->logo;
         $oversea->update();
         return redirect()->back()->with('success', 'Process is completed.');
     }

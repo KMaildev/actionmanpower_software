@@ -10,7 +10,43 @@ class Passport extends Model
 
     use LogsActivity;
     protected static $logName = 'passports_log';
-    protected static $logAttributes = ['name', 'father_name', 'nrc', 'date_of_birth', 'passport', 'passport_date', 'local_agent_name', 'phone', 'address', 'gender', 'remark', 'join_date', 'owic', 'owic_date', 'reject_status', 'reject_date', 'reject_reason', 'place_of_passport', 'created_at', 'updated_at'];
+    protected static $logAttributes = [
+        'owic',
+        'owic_date',
+        'reject_status',
+        'reject_date',
+        'reject_reason',
+        'labour_card_no',
+        'issue_labour_date',
+        'name',
+        'gender',
+        'nrc',
+        'father_name',
+        'qualification',
+        'date_of_birth',
+        'address',
+        'phone',
+        'job',
+        'passport',
+        'passport_date',
+        'identification_card',
+        'issue_date_id_card',
+        'place_of_passport',
+        'salary',
+        'covid_status',
+        'vaccine_name',
+        'covid_number',
+        'contact_person',
+        'phone_number',
+        'relative',
+        'local_agent_name',
+        'local_agent_phone',
+        'local_agent_email',
+        'remark',
+        'join_date',
+        'created_at',
+        'updated_at',
+    ];
 
 
     /**
@@ -19,7 +55,34 @@ class Passport extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'father_name', 'nrc', 'date_of_birth', 'passport', 'passport_date', 'local_agent_name', 'phone', 'address', 'gender', 'remark',
+        'labour_card_no',
+        'issue_labour_date',
+        'name',
+        'gender',
+        'nrc',
+        'father_name',
+        'qualification',
+        'date_of_birth',
+        'address',
+        'phone',
+        'job',
+        'passport',
+        'passport_date',
+        'identification_card',
+        'issue_date_id_card',
+        'place_of_passport',
+        'salary',
+        'covid_status',
+        'vaccine_name',
+        'covid_number',
+        'contact_person',
+        'phone_number',
+        'relative',
+        'local_agent_name',
+        'local_agent_phone',
+        'local_agent_email',
+        'remark',
+        'join_date',
     ];
 
 

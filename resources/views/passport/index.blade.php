@@ -67,26 +67,69 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="table-responsive py-3">
+                <div class="table-responsive  py-3">
                     <span style="margin: 2px; font-weight: bold;">Total: {{ count($passports) }}</span>
-                    <table class="table color-table success-table color-bordered-table muted-bordered-table">
-                        <thead>
+                    <table class="table  muted-bordered-table">
+                        <thead class="table_bg">
                             <tr>
-                                <th style="width: 1%;">#</th>
-                                <th style="width: 5%; text-align: center;">Name</th>
-                                <th style="width: 1%; text-align: center;">M/F</th>
-                                <th style="width: 3%; text-align: center;">NRC</th>
-                                <th style="width: 5%; text-align: center;">Father Name</th>
-                                <th style="width: 5%; text-align: center;">Date of Birth</th>
-                                <th style="width: 5%; text-align: center;">Address</th>
-                                <th style="width: 3%; text-align: center;">Overseas Company</th>
-                                <th style="width: 3%; text-align: center;">Passport No</th>
-                                <th style="width: 5%; text-align: center;">Date of Passport</th>
-                                <th style="width: 5%; text-align: center;">OWIC</th>
-                                <th style="width: 5%; text-align: center;">Place of Passport</th>
-                                <th style="width: 5%; text-align: center;">Phone No</th>
-                                <th style="width: 1%; text-align: center;">Action</th>
+                                <th class="header" scope="col" style="width: 1%;">#</th>
+                                <th class="header" scope="col" style="text-align: center;">
+                                    Labour of Card No
+                                </th>
+                                <th class="header" scope="col" style="ext-align: center;">
+                                    Issue of Labour Date
+                                </th>
+                                <th class="header" scope="col" style="ext-align: center;">
+                                    Name
+                                </th>
+                                <th class="header" scope="col" style="text-align: center;">
+                                    M/F
+                                </th>
+                                <th class="header" scope="col" style="text-align: center;">
+                                    N.R.C No
+                                </th>
+                                <th class="header" scope="col" style="ext-align: center;">
+                                    Father's Name
+                                </th>
+                                <th class="header" scope="col" style="ext-align: center;">
+                                    Qualification
+                                </th>
+                                <th class="header" scope="col" style="ext-align: center;">
+                                    Date of Birth
+                                </th>
+                                <th class="header" scope="col" style="ext-align: center;">
+                                    Address in Myanmar
+                                </th>
+                                <th class="header" scope="col" style="ext-align: center;">
+                                    Job
+                                </th>
+                                <th class="header" scope="col" style="text-align: center;">
+                                    Factory's Name
+                                </th>
+                                <th class="header" scope="col" style="text-align: center;">
+                                    Passport No
+                                </th>
+                                <th class="header" scope="col" style="text-align: center;">
+                                    Issue Date of Passport
+                                </th>
+                                <th class="header" scope="col" style="text-align: center;">
+                                    Identification Card
+                                </th>
+                                <th class="header" scope="col" style="text-align: center;">
+                                    Issue Date of ID Card
+                                </th>
+                                <th class="header" scope="col" style="ext-align: center;">
+                                    Place of Passport
+                                </th>
+                                <th class="header" scope="col" style="ext-align: center;">
+                                    Salary
+                                </th>
+                                <th class="header" scope="col" style="ext-align: center;">
+                                    OWIC
+                                </th>
+                                <th class="header" scope="col" style="text-align: center;">
+                                    Action
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -96,22 +139,34 @@
                                         {{ $key + 1 }}
                                     </td>
                                     <td style="text-align: center;">
+                                        {{ $passport->labour_card_no ?? '' }}
+                                    </td>
+                                    <td style="text-align: center;">
+                                        {{ $passport->issue_labour_date ?? '' }}
+                                    </td>
+                                    <td style="text-align: center;">
                                         {{ $passport->name }}
                                     </td>
                                     <td style="text-align: center;">
-                                        {{ ucfirst($passport->gender ?? '-') }}
+                                        {{ ucfirst($passport->gender ?? '') }}
                                     </td>
                                     <td style="text-align: center;">
                                         {{ $passport->nrc ?? '-' }}
                                     </td>
                                     <td style="text-align: center;">
-                                        {{ $passport->father_name ?? '-' }}
+                                        {{ $passport->father_name ?? '' }}
                                     </td>
                                     <td style="text-align: center;">
-                                        {{ $passport->date_of_birth ?? '-' }}
+                                        {{ $passport->qualification ?? '' }}
                                     </td>
                                     <td style="text-align: center;">
-                                        {{ $passport->address ?? '-' }}
+                                        {{ $passport->date_of_birth ?? '' }}
+                                    </td>
+                                    <td style="text-align: center;">
+                                        {{ $passport->address ?? '' }}
+                                    </td>
+                                    <td style="text-align: center;">
+                                        {{ $passport->job ?? '' }}
                                     </td>
                                     <td>
                                         {{ $passport->labour_management_table->overseas_agencies_table->company_name ?? '' }}
@@ -120,13 +175,19 @@
                                         {{ $passport->passport ?? '-' }}
                                     </td>
                                     <td style="text-align: center;">
-                                        {{ $passport->passport_date ?? '-' }}
+                                        {{ $passport->passport_date ?? '' }}
                                     </td>
                                     <td style="text-align: center;">
-                                        {{ $passport->owic ?? '-' }}
+                                        {{ $passport->identification_card ?? '' }}
+                                    </td>
+                                    <td style="text-align: center;">
+                                        {{ $passport->issue_date_id_card ?? '' }}
                                     </td>
                                     <td style="text-align: center;">
                                         {{ $passport->place_of_passport ?? '-' }}
+                                    </td>
+                                    <td style="text-align: center;">
+                                        {{ $passport->owic ?? '-' }}
                                     </td>
                                     <td style="text-align: center;">
                                         {{ $passport->phone ?? '-' }}
@@ -172,7 +233,8 @@
             </div>
         </div>
     </div>
-    </div>
+
+    <br><br><br>
 @endsection
 
 @section('script')

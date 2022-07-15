@@ -39,6 +39,11 @@
         background-color: green;
         color: white;
     }
+
+    .table_bg {
+        background-color: #7ab0bc !important;
+        color: black;
+    }
 </style>
 
 <body class="horizontal-nav skin-megna fixed-layout">
