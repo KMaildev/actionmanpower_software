@@ -44,6 +44,9 @@ class Passport extends Model
         'local_agent_email',
         'remark',
         'join_date',
+        'leave_status',
+        'leave_date',
+        'leave_remark',
         'created_at',
         'updated_at',
     ];
@@ -83,6 +86,11 @@ class Passport extends Model
         'local_agent_email',
         'remark',
         'join_date',
+        'leave_status',
+        'leave_date',
+        'leave_remark',
+        'join_date',
+        'enquiry',
     ];
 
 

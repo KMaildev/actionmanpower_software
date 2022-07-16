@@ -6,7 +6,7 @@ use App\Models\Passport;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
-class PassportImport implements ToModel, WithHeadingRow
+class EnquiryPassportImport implements ToModel, WithHeadingRow
 {
     /**
      * @param array $row
@@ -44,7 +44,7 @@ class PassportImport implements ToModel, WithHeadingRow
             'local_agent_email' => strval($row['local_agent_email']),
             'remark' => strval($row['remark']),
             'join_date' => date("Y-m-d"),
-            'enquiry' => 'finished',
+            'enquiry' => 'enquiry',
         ]);
     }
 }

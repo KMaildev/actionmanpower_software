@@ -1,13 +1,12 @@
 @extends('layouts.main')
 @section('content')
-    <div class="row">
+    <div class="row py-4">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header bg-info">
                     <h4 class="mb-0 text-white">Edit Contract</h4>
                 </div>
-                <form action="{{ route('contract.update', $contract->id) }}" method="POST" autocomplete="off"
-                    id="edit-form">
+                <form action="{{ route('contract.update', $contract->id) }}" method="POST" autocomplete="off" id="edit-form">
                     @csrf
                     @method('PUT')
                     <div class="card-body">

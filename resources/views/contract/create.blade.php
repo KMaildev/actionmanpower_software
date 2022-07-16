@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('content')
-    <div class="row">
+    <div class="row py-4">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header bg-info">
@@ -86,7 +86,8 @@
                                         <label class="form-label">Contract Male</label>
                                         <input type="text"
                                             class="form-control @error('contract_male') form-control-danger @enderror"
-                                            name="contract_male" oninput="MaleFemaleTotalCalc()" id="male" value="0">
+                                            name="contract_male" oninput="MaleFemaleTotalCalc()" id="male"
+                                            value="0">
                                         @error('contract_male')
                                             <div class="form-control-feedback" style="color: red;">
                                                 {{ $message }} </div>
@@ -99,7 +100,8 @@
                                         <label class="form-label">Contract Female</label>
                                         <input type="text"
                                             class="form-control @error('contract_female') form-control-danger @enderror"
-                                            name="contract_female" oninput="MaleFemaleTotalCalc()" id="female" value="0">
+                                            name="contract_female" oninput="MaleFemaleTotalCalc()" id="female"
+                                            value="0">
                                         @error('contract_female')
                                             <div class="form-control-feedback" style="color: red;">
                                                 {{ $message }} </div>

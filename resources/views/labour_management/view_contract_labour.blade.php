@@ -81,7 +81,7 @@
                         Information
                     </h4>
                 </div>
-                <table class="table no-border">
+                <table class="table no-border" style="margin-bottom: 1em !important">
                     <p style="padding-top: 10px; padding-left: 10px; font-weight: bold;">
                         Demand Information
                     </p>
@@ -139,19 +139,24 @@
                         <tr>
                             <td>Contract Male</td>
                             <td class="font-medium">
-                                {{ $demand->contracts_table->contract_male ?? '' }}
+                                {{ $demand->contracts_table->contract_male ?? '0' }}
                             </td>
                         </tr>
                         <tr>
                             <td>Contract Female</td>
                             <td class="font-medium">
-                                {{ $demand->contracts_table->contract_female ?? '' }}
+                                {{ $demand->contracts_table->contract_female ?? '0' }}
                             </td>
                         </tr>
                         <tr>
                             <td>Contract Total</td>
                             <td class="font-medium">
-                                {{ $demand->contracts_table->contract_male + $demand->contracts_table->contract_female }}
+                                @php
+                                    $contract_male = $demand->contracts_table->contract_male ?? 0;
+                                    $contract_female = $demand->contracts_table->contract_female ?? 0;
+                                    $contract_total = $contract_male + $contract_female;
+                                    echo $contract_total;
+                                @endphp
                             </td>
                         </tr>
                     </tbody>

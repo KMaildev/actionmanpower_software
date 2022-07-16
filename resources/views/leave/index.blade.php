@@ -124,7 +124,7 @@
                         </thead>
                         <tbody>
                             @foreach ($passports as $key => $passport)
-                                @if ($passport->reject_status == 'rejected')
+                                @if ($passport->leave_status == 'leaved')
                                     <tr>
                                         <td style="text-align: center;">
                                             {{ $key + 1 }}

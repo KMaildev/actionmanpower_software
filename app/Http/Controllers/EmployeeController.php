@@ -8,6 +8,7 @@ use App\Models\Department;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Models\Role;
 
 class EmployeeController extends Controller
 {
@@ -30,7 +31,8 @@ class EmployeeController extends Controller
     public function create()
     {
         $departments = Department::orderBy('title')->get();
-        return view('hr.employee.create', compact('departments'));
+        $roles = Role::all();
+        return view('hr.employee.create', compact('departments', 'roles'));
     }
 
     /**
@@ -52,6 +54,7 @@ class EmployeeController extends Controller
         $employee->password = Hash::make($request->password);
         $employee->department_id = $request->department_id;
         $employee->save();
+        $employee->syncRoles($request->roles);
         return redirect()->back()->with('success', 'Your processing has been completed.');
     }
 
@@ -74,9 +77,12 @@ class EmployeeController extends Controller
      */
     public function edit($id)
     {
+
         $employee = User::findOrFail($id);
+        $old_roles = $employee->roles->pluck('id')->toArray();
         $departments = Department::orderBy('title')->get();
-        return view('hr.employee.edit', compact('employee', 'departments'));
+        $roles = Role::all();
+        return view('hr.employee.edit', compact('employee', 'departments', 'old_roles', 'roles'));
     }
 
     /**
@@ -100,6 +106,7 @@ class EmployeeController extends Controller
 
         $employee->department_id = $request->department_id;
         $employee->update();
+        $employee->syncRoles($request->roles);
         return redirect()->back()->with('success', 'Your processing has been completed.');
     }
 

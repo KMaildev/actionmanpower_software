@@ -16,7 +16,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row py-5">
         <div class="col-lg-12 col-sm-12 col-md-12">
             <div class="card">
                 <div class="card-body">
@@ -132,7 +132,6 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
 @endsection
 

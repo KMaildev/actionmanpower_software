@@ -1,7 +1,7 @@
 <form autocomplete="off" action="{{ route('passport.store') }}" method="POST" id="create-form" class="form"
     enctype="multipart/form-data">
     @csrf
-    <input type="hidden" value="finished" name="enquiry" required>
+    <input type="hidden" value="enquiry" name="enquiry" required>
     <h5 class="card-title">
         Person Info
     </h5>

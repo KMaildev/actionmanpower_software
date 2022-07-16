@@ -34,6 +34,12 @@
                 </li>
 
                 <li>
+                    <a class="waves-effect waves-dark" href="{{ route('enquiry.index') }}" aria-expanded="false">
+                        <span class="hide-menu">Enquiry</span>
+                    </a>
+                </li>
+
+                <li>
                     <a class="waves-effect waves-dark" href="{{ route('passport.index') }}" aria-expanded="false">
                         <span class="hide-menu">Passport</span>
                     </a>
@@ -43,6 +49,13 @@
                 <li>
                     <a class="waves-effect waves-dark" href="{{ route('reject.index') }}" aria-expanded="false">
                         <span class="hide-menu">Reject Passport</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a class="waves-effect waves-dark" href="{{ route('passport_leave.index') }}"
+                        aria-expanded="false">
+                        <span class="hide-menu">Leave</span>
                     </a>
                 </li>
 
@@ -95,16 +108,35 @@
                     </a>
                 </li>
 
-                <li>
-                    <a class="waves-effect waves-dark" href="{{ route('department.index') }}" aria-expanded="false">
-                        <span class="hide-menu">Department</span>
-                    </a>
-                </li>
 
                 <li>
-                    <a class="waves-effect waves-dark" href="{{ route('employee.index') }}" aria-expanded="false">
-                        <span class="hide-menu">Employees</span>
+                    <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                        <span class="hide-menu">
+                            Configuration
+                        </span>
                     </a>
+                    <ul aria-expanded="false" class="collapse">
+                        <li>
+                            <a href="{{ route('department.index') }}" aria-expanded="false">
+                                <span class="hide-menu">Department</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('role.index') }}" aria-expanded="false">
+                                <span class="hide-menu">Role</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('permission.index') }}" aria-expanded="false">
+                                <span class="hide-menu">Permission</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('employee.index') }}" aria-expanded="false">
+                                <span class="hide-menu">Employees</span>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
 
 

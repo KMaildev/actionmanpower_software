@@ -19,10 +19,15 @@ Route::middleware('auth')->group(function () {
     Route::get('passport_export', 'PassportController@passport_export')->name('passport_export');
     Route::get('passport_detail_export/{id}', array('as' => 'passport_detail_export', 'uses' => 'PassportController@passport_detail_export'));
 
+    Route::resource('enquiry', 'EnquiryController');
+    Route::post('enquiry_passport_import', 'EnquiryController@enquiry_passport_import')->name('enquiry_passport_import');
+
 
     Route::resource('owic', 'OwicController');
     Route::resource('reject', 'RejectController');
     Route::get('reject_passport_export', 'RejectController@reject_passport_export')->name('reject_passport_export');
+
+    Route::resource('passport_leave', 'PassportLeaveController');
 
     Route::resource('new_demand', 'NewDemandController');
     Route::resource('old_demand', 'OldDemandController');
@@ -49,4 +54,7 @@ Route::middleware('auth')->group(function () {
 
     Route::view('/file_manager', 'file_manager.index')->name('file_manager.index');
     Route::resource('activity', 'Activity\ActivityLogController');
+
+    Route::resource('permission', 'PermissionController');
+    Route::resource('role', 'RoleController');
 });

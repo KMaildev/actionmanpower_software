@@ -8,11 +8,11 @@
             <div class="d-flex justify-content-end align-items-center">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <a href="{{ route('passport.index') }}">Passport</a>
+                        <a href="{{ route('enquiry.index') }}">Passport</a>
                     </li>
                     <li class="breadcrumb-item active">Table</li>
                 </ol>
-                <a href="{{ route('passport.create') }}" class="btn btn-success d-none d-lg-block m-l-15 text-white">
+                <a href="{{ route('enquiry.create') }}" class="btn btn-success d-none d-lg-block m-l-15 text-white">
                     <i class="fa fa-plus-circle"></i> Create
                 </a>
             </div>

@@ -21,7 +21,12 @@ class PassportController extends Controller
      */
     public function index()
     {
-        $passports = Passport::where('reject_status', NULL)->paginate(1000);
+        $passports = Passport::where([
+            'reject_status' => NULL,
+            'enquiry' => 'finished',
+        ])->paginate(1000);
+
+
         if (request('search')) {
             $passports = Passport::where(function ($query) {
                 $query->where('name', 'Like', '%' . request('search') . '%');
@@ -96,6 +101,7 @@ class PassportController extends Controller
         $Passport->local_agent_phone = $request->local_agent_phone;
         $Passport->local_agent_email = $request->local_agent_email;
         $Passport->remark = $request->remark;
+        $Passport->enquiry = $request->enquiry;
         $Passport->join_date = date("Y-m-d");
         $Passport->save();
         return redirect()->back()->with('success', 'Your processing has been completed.');
