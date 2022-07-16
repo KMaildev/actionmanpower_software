@@ -20,7 +20,7 @@
 
                 <div class="table-responsive text-nowrap">
                     <table class="table table-bordered table-sm">
-                        <thead class="tbbg">
+                        <thead class="table_bg">
                             <tr>
                                 <th style="color: white; text-align: center; width: 1%;">#</th>
                                 <th style="color: white; text-align: center;">Name</th>

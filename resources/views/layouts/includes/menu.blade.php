@@ -33,38 +33,46 @@
                     </a>
                 </li>
 
-                <li>
-                    <a class="waves-effect waves-dark" href="{{ route('enquiry.index') }}" aria-expanded="false">
-                        <span class="hide-menu">Enquiry</span>
-                    </a>
-                </li>
+                @can('enquiry')
+                    <li>
+                        <a class="waves-effect waves-dark" href="{{ route('enquiry.index') }}" aria-expanded="false">
+                            <span class="hide-menu">Enquiry</span>
+                        </a>
+                    </li>
+                @endcan
 
-                <li>
-                    <a class="waves-effect waves-dark" href="{{ route('passport.index') }}" aria-expanded="false">
-                        <span class="hide-menu">Passport</span>
-                    </a>
-                </li>
+                @can('passport')
+                    <li>
+                        <a class="waves-effect waves-dark" href="{{ route('passport.index') }}" aria-expanded="false">
+                            <span class="hide-menu">Passport</span>
+                        </a>
+                    </li>
+                @endcan
 
+                @can('reject')
+                    <li>
+                        <a class="waves-effect waves-dark" href="{{ route('reject.index') }}" aria-expanded="false">
+                            <span class="hide-menu">Reject Passport</span>
+                        </a>
+                    </li>
+                @endcan
 
-                <li>
-                    <a class="waves-effect waves-dark" href="{{ route('reject.index') }}" aria-expanded="false">
-                        <span class="hide-menu">Reject Passport</span>
-                    </a>
-                </li>
+                @can('leave')
+                    <li>
+                        <a class="waves-effect waves-dark" href="{{ route('passport_leave.index') }}"
+                            aria-expanded="false">
+                            <span class="hide-menu">Leave</span>
+                        </a>
+                    </li>
+                @endcan
 
-                <li>
-                    <a class="waves-effect waves-dark" href="{{ route('passport_leave.index') }}"
-                        aria-expanded="false">
-                        <span class="hide-menu">Leave</span>
-                    </a>
-                </li>
-
-
-                <li>
-                    <a class="waves-effect waves-dark" href="{{ route('new_demand.index') }}" aria-expanded="false">
-                        <span class="hide-menu">Demand</span>
-                    </a>
-                </li>
+                @can('demand')
+                    <li>
+                        <a class="waves-effect waves-dark" href="{{ route('new_demand.index') }}" aria-expanded="false">
+                            <span class="hide-menu">Demand</span>
+                        </a>
+                    </li>
+                @endcan
 
 
                 <li hidden>
@@ -73,40 +81,48 @@
                     </a>
                 </li>
 
-
-                <li>
-                    <a class="waves-effect waves-dark" href="{{ route('contract.index') }}" aria-expanded="false">
-                        <span class="hide-menu">Contract</span>
-                    </a>
-                </li>
-
-
-                <li>
-                    <a class="waves-effect waves-dark" href="{{ route('sending.index') }}" aria-expanded="false">
-                        <span class="hide-menu">Sending</span>
-                    </a>
-                </li>
+                @can('contract')
+                    <li>
+                        <a class="waves-effect waves-dark" href="{{ route('contract.index') }}" aria-expanded="false">
+                            <span class="hide-menu">Contract</span>
+                        </a>
+                    </li>
+                @endcan
 
 
-                <li>
-                    <a class="waves-effect waves-dark" href="{{ route('overseas_agent.index') }}"
-                        aria-expanded="false">
-                        <span class="hide-menu">Overseas Agent</span>
-                    </a>
-                </li>
+                @can('sending')
+                    <li>
+                        <a class="waves-effect waves-dark" href="{{ route('sending.index') }}" aria-expanded="false">
+                            <span class="hide-menu">Sending</span>
+                        </a>
+                    </li>
+                @endcan
 
-                <li>
-                    <a class="waves-effect waves-dark" href="{{ route('file_manager.index') }}"
-                        aria-expanded="false">
-                        <span class="hide-menu">File Manager</span>
-                    </a>
-                </li>
+                @can('overseas_agent')
+                    <li>
+                        <a class="waves-effect waves-dark" href="{{ route('overseas_agent.index') }}"
+                            aria-expanded="false">
+                            <span class="hide-menu">Overseas Agent</span>
+                        </a>
+                    </li>
+                @endauth
 
-                <li>
-                    <a class="waves-effect waves-dark" href="{{ route('country.index') }}" aria-expanded="false">
-                        <span class="hide-menu">Country</span>
-                    </a>
-                </li>
+                @can('file_manager')
+                    <li>
+                        <a class="waves-effect waves-dark" href="{{ route('file_manager.index') }}"
+                            aria-expanded="false">
+                            <span class="hide-menu">File Manager</span>
+                        </a>
+                    </li>
+                @endcan
+
+                @can('country')
+                    <li>
+                        <a class="waves-effect waves-dark" href="{{ route('country.index') }}" aria-expanded="false">
+                            <span class="hide-menu">Country</span>
+                        </a>
+                    </li>
+                @endcan
 
 
                 <li>
@@ -116,26 +132,37 @@
                         </span>
                     </a>
                     <ul aria-expanded="false" class="collapse">
-                        <li>
-                            <a href="{{ route('department.index') }}" aria-expanded="false">
-                                <span class="hide-menu">Department</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('role.index') }}" aria-expanded="false">
-                                <span class="hide-menu">Role</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('permission.index') }}" aria-expanded="false">
-                                <span class="hide-menu">Permission</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('employee.index') }}" aria-expanded="false">
-                                <span class="hide-menu">Employees</span>
-                            </a>
-                        </li>
+                        @can('department')
+                            <li>
+                                <a href="{{ route('department.index') }}" aria-expanded="false">
+                                    <span class="hide-menu">Department</span>
+                                </a>
+                            </li>
+                        @endcan
+
+                        @can('role')
+                            <li>
+                                <a href="{{ route('role.index') }}" aria-expanded="false">
+                                    <span class="hide-menu">Role</span>
+                                </a>
+                            </li>
+                        @endcan
+
+                        @can('permission')
+                            <li>
+                                <a href="{{ route('permission.index') }}" aria-expanded="false">
+                                    <span class="hide-menu">Permission</span>
+                                </a>
+                            </li>
+                        @endcan
+
+                        @can('employee')
+                            <li>
+                                <a href="{{ route('employee.index') }}" aria-expanded="false">
+                                    <span class="hide-menu">Employees</span>
+                                </a>
+                            </li>
+                        @endcan
                     </ul>
                 </li>
 
